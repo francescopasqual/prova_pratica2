@@ -6,7 +6,7 @@
 
   <!-- Header check -->
   <module name="RegexpHeader">
-    <property name="headerFile" value="header.txt"/>
+    <property name="headerFile" value="roman-number/header.txt"/>
   </module>
   
   <!-- File length check -->
