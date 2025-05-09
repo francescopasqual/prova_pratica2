@@ -8,8 +8,8 @@
     <module name="FileLength"/>
 
     <module name="Header">
-        <property name="header" value="////////////////////////////////////////////////////////////////////\n// [NOME1] [COGNOME1] [MATRICOLA1]\n// [NOME2] [COGNOME2] [MATRICOLA2]\n////////////////////////////////////////////////////////////////////"/>
-        <property name="fileExtensions" value="java"/> </module>
+        <property name="header" value="header.txt"/>
+        <property name="fileExtensions" value="txt"/> </module>
 
     <module name="LineLength"/>
 

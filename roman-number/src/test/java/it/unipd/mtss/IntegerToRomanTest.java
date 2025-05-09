@@ -2,7 +2,6 @@
 // FRANCESCO PASQUAL 2103119
 // MARCO PIRO 2068075
 ////////////////////////////////////////////////////////////////////
-
 package it.unipd.mtss;
 
 import static org.junit.Assert.assertEquals;

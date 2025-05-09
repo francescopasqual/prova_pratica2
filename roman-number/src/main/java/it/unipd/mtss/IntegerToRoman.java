@@ -5,28 +5,32 @@
 package it.unipd.mtss;
 
 public class IntegerToRoman {
-    public static String convert(int number) {
-        if (number < 1 || number > 1000) {
-            throw new IllegalArgumentException("Number must be between 1 and 1000");
+
+    /**
+     * Converte un numero intero in un numero romano.
+     *
+     * @param number 
+     * @return La rappresentazione del numero in formato romano.
+     * @throws IllegalArgumentException se l'input non è compreso tra 1 e 1000.
+     */
+    public static String convert(final int number) {
+        if (number <= 0 || number > 1000) {
+            // Spezziamo la riga per rispettare il limite di 80 caratteri
+            throw new IllegalArgumentException(
+                "Number must be between 1 and 1000");
         }
 
-        String[] romanNumerals = {
-            "M", "CM", "D", "CD", "C", "XC", "L",
-            "XL", "X", "IX", "V", "IV", "I"
-        };
-        int[] values = {
-            1000, 900, 500, 400, 100, 90, 50,
-            40, 10, 9, 5, 4, 1
-        };
+        String[] thousands = {"", "M"};
+        String[] hundreds = {"", "C", "CC", "CCC", "CD", "D", 
+        "DC", "DCC", "DCCC", "CM"};
+        String[] tens = {"", "X", "XX", "XXX", "XL", "L", 
+        "LX", "LXX", "LXXX", "XC"};
+        String[] ones = {"", "I", "II", "III", "IV", "V", 
+        "VI", "VII", "VIII", "IX"};
 
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < values.length; i++) {
-            while (number >= values[i]) {
-                number -= values[i];
-                result.append(romanNumerals[i]);
-            }
-        }
-
-        return result.toString();
+        return thousands[number / 1000] +
+               hundreds[(number % 1000) / 100] +
+               tens[(number % 100) / 10] +
+               ones[number % 10];
     }
 }
