@@ -22,10 +22,10 @@ jobs:
       run: mvn -B install --file roman-number/pom.xml
 
     - name: Run tests
-      run: mvn test
+      run: mvn -B test --file roman-number/pom.xml
 
     - name: Run coverage
-      run: mvn test jacoco:report
+      run: mvn -B test jacoco:report
 
     - name: Upload coverage to Coveralls
       env:
