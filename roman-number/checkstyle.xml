@@ -1,55 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE module PUBLIC "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN" "https://checkstyle.org/dtds/configuration_1_3.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+                                "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
 <module name="Checker">
-  <property name="severity" value="error"/>
-  <property name="fileExtensions" value="java"/>
+    <module name="FileTabCharacter"/>
 
-  <!-- Header check -->
-  <module name="RegexpHeader">
-    <property name="headerFile" value="roman-number/header.txt"/>
-  </module>
-  
-  <!-- File length check -->
-  <module name="FileLength">
-    <property name="max" value="500"/>
-  </module>
-  
-  <!-- No tabs allowed -->
-  <module name="FileTabCharacter">
-    <property name="eachLine" value="true"/>
-  </module>
-  
-  <!-- Line length check (moved out of TreeWalker) -->
-  <module name="LineLength">
-    <property name="max" value="120"/>
-  </module>
+    <module name="FileLength"/>
 
-  <module name="TreeWalker">
-    <!-- Complexity checks -->
-    <module name="BooleanExpressionComplexity">
-      <property name="max" value="3"/>
-    </module>
-    <module name="CyclomaticComplexity">
-      <property name="max" value="10"/>
-    </module>
-    
-    <!-- Method length check -->
-    <module name="MethodLength">
-      <property name="max" value="50"/>
-    </module>
-    
-    <!-- Empty catch block check -->
-    <module name="EmptyCatchBlock">
-      <property name="exceptionVariableName" value="expected"/>
-    </module>
-    
-    <!-- Import checks -->
-    <module name="AvoidStarImport"/>
-    <module name="IllegalImport">
-      <property name="illegalPkgs" value="sun, org.apache.commons"/>
-    </module>
-    
-    <!-- Braces check -->
-    <module name="NeedBraces"/>
-  </module>
+    <module name="Header">
+        <property name="header" value="////////////////////////////////////////////////////////////////////\n// [NOME1] [COGNOME1] [MATRICOLA1]\n// [NOME2] [COGNOME2] [MATRICOLA2]\n////////////////////////////////////////////////////////////////////"/>
+        <property name="fileExtensions" value="java"/> </module>
+
+    <module name="LineLength"/>
+
+    <module name="TreeWalker">
+
+        <module name="BooleanExpressionComplexity"/>
+
+        <module name="CyclomaticComplexity"/>
+
+        <module name="MethodLength"/>
+
+        <module name="EmptyCatchBlock"/>
+
+        <module name="AvoidStarImport"/>
+
+        <module name="IllegalImport"/>
+
+        <module name="NeedBraces"/>
+
+        </module>
+
 </module>
